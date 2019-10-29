@@ -21,7 +21,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     void LateUpdate()
     {
         CamControl();
-        ViewObstructed();
+        //ViewObstructed();
     }
 
     void CamControl()

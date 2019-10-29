@@ -6,12 +6,14 @@ public class ThirdPersonCharacterController : MonoBehaviour
 {
     public Interactable focus;
     public float Speed;
+    Rigidbody rb;
 
     Camera cam;
 
     void Start()
     {
         cam = Camera.main;
+        rb = GetComponent<Rigidbody>();
     }
     // Update is called once per frame
     void Update()
@@ -44,7 +46,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
         Vector3 playerMovement = new Vector3(hor, 0f, ver).normalized * Speed * Time.deltaTime;
-        transform.Translate(playerMovement, Space.Self);
+        rb.transform.Translate(playerMovement, Space.Self);
     }
 
     void SetFocus(Interactable newFocus)
