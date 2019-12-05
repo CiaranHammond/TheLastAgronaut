@@ -27,15 +27,26 @@ public class ThirdPersonCharacterController : MonoBehaviour
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
+            RaycastHit[] hits;
 
-            //Debug.Log(interactable);
-            if(Physics.Raycast(ray, out hit))
+            hits = Physics.RaycastAll(ray, 10.0f);
+
+            //Debug.Log("Right Click Confirm");
+            if (hits.Length > 0)
             {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null)
+                for(int i = 0; i < hits.Length; i++)
                 {
-                    //Debug.Log("Right Click Confirm");
-                    SetFocus(interactable);
+                    hit = hits[i];
+                    //Debug.Log("Interacting with " + hit.collider.name);
+                    if(hit.collider.GetComponent<Interactable>())
+                    {
+                        Interactable interactable = hit.collider.GetComponent<Interactable>();
+                        //Debug.Log("Interacting with " + hit.collider.name);
+                        if(interactable != null)
+                        {
+                            SetFocus(interactable);
+                        }
+                    }
                 }
             }
         }

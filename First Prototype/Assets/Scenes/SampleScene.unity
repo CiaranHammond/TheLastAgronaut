@@ -237,6 +237,18 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 381629828, guid: 38bb08431d561fc459b85cb53e2a3ee7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 381629828, guid: 38bb08431d561fc459b85cb53e2a3ee7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 381629829, guid: 38bb08431d561fc459b85cb53e2a3ee7, type: 3}
+      propertyPath: m_Text
+      value: Cuttings
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38bb08431d561fc459b85cb53e2a3ee7, type: 3}
 --- !u!1 &149914254
@@ -515,6 +527,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 381629828, guid: 38bb08431d561fc459b85cb53e2a3ee7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 76.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 381629829, guid: 38bb08431d561fc459b85cb53e2a3ee7, type: 3}
+      propertyPath: m_Text
+      value: Medicine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38bb08431d561fc459b85cb53e2a3ee7, type: 3}
@@ -1163,6 +1183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   space: 3
+  milkTotal: 0
+  cuttingsTotal: 0
+  medTotal: 0
   items: []
 --- !u!4 &1130193004
 Transform:

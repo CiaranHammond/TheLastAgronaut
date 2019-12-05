@@ -18,7 +18,10 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
-    public int space = 6;
+    public int space = 3;
+    public int milkTotal = 0;
+    public int cuttingsTotal = 0;
+    public int medTotal = 0;
     public List<Item> items = new List<Item>();
 
     public bool Add(Item item)
@@ -28,9 +31,48 @@ public class Inventory : MonoBehaviour
             Debug.Log("Not enough room");
             return false;//this bool is to not destroy the gameObject if out of room
         }
-        items.Add(item);
-        
-        if(onItemChangedCallback != null)
+
+        if(item.name == "Milk")
+        {
+            if (milkTotal == 0)
+            {
+                items.Add(item);
+                milkTotal += 1;
+            }
+            else if(milkTotal>0)
+            {
+                Debug.Log("Too much milk!");
+                return false;
+            }
+        }
+        else if (item.name == "Cutting")
+        {
+            if (cuttingsTotal == 0)
+            {
+                items.Add(item);
+                cuttingsTotal += 1;
+            }
+            else if (cuttingsTotal > 0)
+            {
+                Debug.Log("Too many cuttings!");
+                return false;
+            }
+        }
+        else if (item.name == "Medicine")
+        {
+            if (medTotal == 0)
+            {
+                items.Add(item);
+                medTotal += 1;
+            }
+            else if (medTotal > 0)
+            {
+                Debug.Log("Too much medicine!");
+                return false;
+            }
+        }
+
+        if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
         }
