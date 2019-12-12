@@ -15,21 +15,25 @@ public class InventorySlot : MonoBehaviour
         item = newItem;
         icon.sprite = item.icon;
         icon.enabled = true;
+        count = FindObjectOfType<Text>();
+        //count.text = "Count: ";
         if(item.name == "Milk")
         {
-            Debug.Log("milk");
             milkStack += 1;
             count.text = milkStack.ToString();
+            Debug.Log("milk" + count.text);
         }
         else if(item.name == "Cutting")
         {
-            Debug.Log("cutting");
             cuttingStack += 1;
+            count.text = cuttingStack.ToString();
+            Debug.Log("cut " + count.text);
         }
         else if(item.name == "Medicine")
         {
-            Debug.Log("med");
             medStack += 1;
+            count.text = medStack.ToString();
+            Debug.Log("med " + count.text);
         }
     }
 
@@ -39,5 +43,7 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = null;
         icon.enabled = false;
+        count = FindObjectOfType<Text>();
+        //count.text = "";
     }
 }
