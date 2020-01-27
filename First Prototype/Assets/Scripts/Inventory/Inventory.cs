@@ -18,49 +18,59 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
-    public Item itemAdded;
     public int space = 3;
-    public int i = 0, j = 0, k = 0;
+    public int milkTotal = 0;
+    public int cuttingsTotal = 0;
+    public int medTotal = 0;
     public List<Item> items = new List<Item>();
-    public Dictionary<int, Item> milkDictionary = new Dictionary<int, Item>();
-    public Dictionary<int, Item> medDictionary = new Dictionary<int, Item>();
-    public Dictionary<int, Item> cutDictionary = new Dictionary<int, Item>();
-
-    
 
     public bool Add(Item item)
     {
+        if(items.Count >= space)
+        {
+            Debug.Log("Not enough room");
+            return false;//this bool is to not destroy the gameObject if out of room
+        }
+
         if(item.name == "Milk")
         {
-            itemAdded = item;
-            milkDictionary.Add(i, item);
-            i++;
-            
-            items.Add(item);
+            if (milkTotal == 0)
+            {
+                items.Add(item);
+                milkTotal += 1;
+            }
+            else if(milkTotal>0)
+            {
+                Debug.Log("Too much milk!");
+                return false;
+            }
         }
-        if (item.name == "Medicine")
+        else if (item.name == "Cutting")
         {
-            itemAdded = item;
-            medDictionary.Add(j, item);
-            j++;
-
-            items.Add(item);
+            if (cuttingsTotal == 0)
+            {
+                items.Add(item);
+                cuttingsTotal += 1;
+            }
+            else if (cuttingsTotal > 0)
+            {
+                Debug.Log("Too many cuttings!");
+                return false;
+            }
         }
-        if (item.name == "Cutting")
+        else if (item.name == "Medicine")
         {
-            itemAdded = item;
-            cutDictionary.Add(k, item);
-            k++;
-
-            items.Add(item);
+            if (medTotal == 0)
+            {
+                items.Add(item);
+                medTotal += 1;
+            }
+            else if (medTotal > 0)
+            {
+                Debug.Log("Too much medicine!");
+                return false;
+            }
         }
-
-               
-        //if(items.Count >= space)
-        //{
-        //    Debug.Log("Not enough room");
-        //    return false;//this bool is to not destroy the gameObject if out of room
-        //}
 
         if (onItemChangedCallback != null)
         {

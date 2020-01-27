@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThirdPersonCameraController : MonoBehaviour
 {
-    public float RotationSpeed = 1;
+    public float Sensitivity = 1;
     public Transform Target, Player;
     float mouseX, mouseY;
 
@@ -26,8 +26,8 @@ public class ThirdPersonCameraController : MonoBehaviour
 
     void CamControl()
     {
-        mouseX += Input.GetAxis("Mouse X") * RotationSpeed;
-        mouseY -= Input.GetAxis("Mouse Y") * RotationSpeed;
+        mouseX += Input.GetAxis("Mouse X") * Sensitivity;
+        mouseY -= Input.GetAxis("Mouse Y") * Sensitivity;
         mouseY = Mathf.Clamp(mouseY, -35, 60);
 
         transform.LookAt(Target);

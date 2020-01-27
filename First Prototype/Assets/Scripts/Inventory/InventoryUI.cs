@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
     Inventory inventory;
     InventorySlot[] slots;
-    public Text[] counts;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +12,6 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallback += UpdateUI;
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        counts = itemsParent.GetComponentsInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -27,29 +24,13 @@ public class InventoryUI : MonoBehaviour
     {
         for(int i = 0; i < slots.Length; i++)
         {
-            if(inventory.itemAdded.name == "Milk")
+            if(i < inventory.items.Count)
             {
-                if (i < 1)
-                {
-                    slots[i].AddItem(inventory.items[i]);
-                    counts[i].text = inventory.milkDictionary.Keys.Count.ToString();
-                }
+                slots[i].AddItem(inventory.items[i]);
             }
-            else if(inventory.itemAdded.name == "Medicine")
+            else
             {
-                if (i == 1)
-                {
-                    slots[i].AddItem(inventory.items[i]);
-                    counts[i].text = inventory.medDictionary.Keys.Count.ToString();
-                }
-            }
-            else if(inventory.itemAdded.name == "Cutting")
-            {
-                if (i > 1)
-                {
-                    slots[i].AddItem(inventory.items[i]);
-                    counts[i].text = inventory.cutDictionary.Keys.Count.ToString();
-                }
+                slots[i].ClearSlot();
             }
         }
     }
