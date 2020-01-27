@@ -18,49 +18,41 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
+    public Item itemAdded;
     public int space = 3;
-    public int i = 0;
+    public int i = 0, j = 0, k = 0;
     public List<Item> items = new List<Item>();
+    public Dictionary<int, Item> milkDictionary = new Dictionary<int, Item>();
+    public Dictionary<int, Item> medDictionary = new Dictionary<int, Item>();
+    public Dictionary<int, Item> cutDictionary = new Dictionary<int, Item>();
 
-    public Vector2[] itemsList = new Vector2[3];
-
-    Vector2 milk = new Vector2(1, 0);
-    Vector2 cut = new Vector2(2, 0);
-    Vector2 med = new Vector2(3, 0);
+    
 
     public bool Add(Item item)
     {
-        itemsList[0] = milk;
-        itemsList[1] = cut;
-        itemsList[2] = med;
-
-        
-        for (i = 0; i < itemsList.Length; i++)
+        if(item.name == "Milk")
         {
-            if(itemsList[i].x == 1)
-            {
-                //Debug.Log(itemsList[i].y);
-                itemsList[i].y += 1;
-                //Debug.Log(itemsList[i].y);
-                items.Add(item);
-                break;
-            }
-            if (itemsList[i].x == 2)
-            {
-                //Debug.Log(itemsList[i].y);
-                itemsList[i].y += 1;
-                //Debug.Log(itemsList[i].y);
-                items.Add(item);
-                break;
-            }
-            if (itemsList[i].x == 3)
-            {
-                //Debug.Log(itemsList[i].y);
-                itemsList[i].y += 1;
-                //Debug.Log(itemsList[i].y);
-                items.Add(item);
-                break;
-            }
+            itemAdded = item;
+            milkDictionary.Add(i, item);
+            i++;
+            
+            items.Add(item);
+        }
+        if (item.name == "Medicine")
+        {
+            itemAdded = item;
+            medDictionary.Add(j, item);
+            j++;
+
+            items.Add(item);
+        }
+        if (item.name == "Cutting")
+        {
+            itemAdded = item;
+            cutDictionary.Add(k, item);
+            k++;
+
+            items.Add(item);
         }
 
                

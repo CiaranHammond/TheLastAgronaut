@@ -27,16 +27,28 @@ public class InventoryUI : MonoBehaviour
     {
         for(int i = 0; i < slots.Length; i++)
         {
-            if(inventory.itemsList[i].y > 0)
+            if(inventory.itemAdded.name == "Milk")
             {
-                if (i < inventory.items.Count)
+                if (i < 1)
                 {
                     slots[i].AddItem(inventory.items[i]);
-                    counts[i].text = inventory.itemsList[i].y.ToString();
+                    counts[i].text = inventory.milkDictionary.Keys.Count.ToString();
                 }
-                else
+            }
+            else if(inventory.itemAdded.name == "Medicine")
+            {
+                if (i == 1)
                 {
-                    slots[i].ClearSlot();
+                    slots[i].AddItem(inventory.items[i]);
+                    counts[i].text = inventory.medDictionary.Keys.Count.ToString();
+                }
+            }
+            else if(inventory.itemAdded.name == "Cutting")
+            {
+                if (i > 1)
+                {
+                    slots[i].AddItem(inventory.items[i]);
+                    counts[i].text = inventory.cutDictionary.Keys.Count.ToString();
                 }
             }
         }
