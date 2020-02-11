@@ -19,37 +19,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
-        if(Input.GetMouseButtonDown(0))
-        {
-            RemoveFocus();
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            RaycastHit[] hits;
-
-            hits = Physics.RaycastAll(ray, 10.0f);
-
-            //Debug.Log("Right Click Confirm");
-            if (hits.Length > 0)
-            {
-                for(int i = 0; i < hits.Length; i++)
-                {
-                    hit = hits[i];
-                    //Debug.Log("Interacting with " + hit.collider.name);
-                    if(hit.collider.GetComponent<Interactable>())
-                    {
-                        Interactable interactable = hit.collider.GetComponent<Interactable>();
-                        //Debug.Log("Interacting with " + hit.collider.name);
-                        if(interactable != null)
-                        {
-                            SetFocus(interactable);
-                        }
-                    }
-                }
-            }
-        }
+        
     }
 
     void PlayerMovement()
@@ -81,5 +51,18 @@ public class ThirdPersonCharacterController : MonoBehaviour
             focus.OnDefocused();
         }
         focus = null;
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if(coll.collider.tag == "Interactable")
+        {
+            Interactable interactable = coll.collider.GetComponent<Interactable>();
+            //Debug.Log("Interacting with " + hit.collider.name);
+            if (interactable != null)
+            {
+                SetFocus(interactable);
+            }
+        }
     }
 }
