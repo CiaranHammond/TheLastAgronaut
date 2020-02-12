@@ -19,7 +19,6 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
     public Item itemAdded;
-    public int space = 3;
     public int i = 0, j = 0, k = 0;
     public List<Item> items = new List<Item>();
     public Dictionary<int, Item> milkDictionary = new Dictionary<int, Item>();
@@ -30,37 +29,33 @@ public class Inventory : MonoBehaviour
 
     public bool Add(Item item)
     {
-        if (item.name == "Milk")
+        if(item != null)
         {
-            itemAdded = item;
-            milkDictionary.Add(i, item);
-            i++;
+            if (item.name == "Milk")
+            {
+                itemAdded = item;
+                milkDictionary.Add(i, item);
+                i++;
 
-            items.Add(item);
+                items.Add(item);
+            }
+            if (item.name == "Medicine")
+            {
+                itemAdded = item;
+                medDictionary.Add(j, item);
+                j++;
+
+                items.Add(item);
+            }
+            if (item.name == "Cutting")
+            {
+                itemAdded = item;
+                cutDictionary.Add(k, item);
+                k++;
+
+                items.Add(item);
+            }
         }
-        if (item.name == "Medicine")
-        {
-            itemAdded = item;
-            medDictionary.Add(j, item);
-            j++;
-
-            items.Add(item);
-        }
-        if (item.name == "Cutting")
-        {
-            itemAdded = item;
-            cutDictionary.Add(k, item);
-            k++;
-
-            items.Add(item);
-        }
-
-
-        //if(items.Count >= space)
-        //{
-        //    Debug.Log("Not enough room");
-        //    return false;//this bool is to not destroy the gameObject if out of room
-        //}
 
         if (onItemChangedCallback != null)
         {
@@ -72,7 +67,24 @@ public class Inventory : MonoBehaviour
 
     public void Remove(Item item)
     {
-        items.Remove(item);
+        if(item.name == "Milk")
+        {
+            milkDictionary.Remove(i);
+            i--;
+            items.Remove(item);
+        }
+        else if (item.name == "Medicine")
+        {
+            medDictionary.Remove(j);
+            j--;
+            items.Remove(item);
+        }
+        else if (item.name == "Cutting")
+        {
+            cutDictionary.Remove(k);
+            k--;
+            items.Remove(item);
+        }
 
         if (onItemChangedCallback != null)
         {

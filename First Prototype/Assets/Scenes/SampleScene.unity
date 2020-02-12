@@ -347,6 +347,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &165030089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4221777012209191111, guid: d202542679b51474db107fa8769e87d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2254078812906085768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &165030092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165030089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a77635b5b88ff04b896c358f2025d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1130193003}
+  med: {fileID: 11400000, guid: b79780dec74b30b49b58da246da8ad78, type: 2}
+  milk: {fileID: 11400000, guid: f218d97287567e240b5434254b0eb6cf, type: 2}
+  cut: {fileID: 11400000, guid: fe48a7b577f3f26418fbac5e3b620a29, type: 2}
 --- !u!1 &219524653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,25 +1144,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &793445991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1171325815, guid: d202542679b51474db107fa8769e87d4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2254078812906085768}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &793445993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793445991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a77635b5b88ff04b896c358f2025d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: b79780dec74b30b49b58da246da8ad78, type: 2}
 --- !u!1001 &827456253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1680,7 +1683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemAdded: {fileID: 0}
-  space: 3
   i: 0
   j: 0
   k: 0
@@ -3217,7 +3219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171325817, guid: d202542679b51474db107fa8769e87d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1171325817, guid: d202542679b51474db107fa8769e87d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -3226,8 +3228,7 @@ PrefabInstance:
     - target: {fileID: 1171325817, guid: d202542679b51474db107fa8769e87d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: 9a77635b5b88ff04b896c358f2025d73,
-        type: 3}
+      objectReference: {fileID: 165030092}
     - target: {fileID: 1171325817, guid: d202542679b51474db107fa8769e87d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -3238,12 +3239,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1171325817, guid: d202542679b51474db107fa8769e87d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: CraftMedicine
       objectReference: {fileID: 0}
     - target: {fileID: 1171325817, guid: d202542679b51474db107fa8769e87d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: Item, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1171325817, guid: d202542679b51474db107fa8769e87d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: b79780dec74b30b49b58da246da8ad78,
+        type: 2}
     - target: {fileID: 1171325818, guid: d202542679b51474db107fa8769e87d4, type: 3}
       propertyPath: m_Sprite
       value: 
