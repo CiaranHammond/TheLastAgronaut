@@ -36,7 +36,6 @@ public class SheepHealth : MonoBehaviour
         {
             Death();
             isDestroyed1 = true;
-            deathSound.Play();
         }
 
         if (currentHealth <= 50 && currentHealth > 49 && !isDestroyed2)
@@ -77,6 +76,8 @@ public class SheepHealth : MonoBehaviour
         {
             sheep[i] = transform.GetChild(i).gameObject;   
         }
+
+        deathSound.Play();
 
         int rand = Random.Range(0, transform.childCount);
         Destroy(transform.GetChild(rand).gameObject, 3);
