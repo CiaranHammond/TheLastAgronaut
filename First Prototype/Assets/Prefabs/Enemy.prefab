@@ -18485,6 +18485,12 @@ MonoBehaviour:
   damage: 10
   maxHP: 50
   currentHP: 50
+  intelligence: 0
+  defense: 10
+  attack1Strength: 0
+  attack2Strength: 0
+  weaknesses:
+  - Glyphosate
 --- !u!1 &7052471623514526486
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,9 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Penelope
   unitLevel: 3
-  damage: 20
+  damage: 10
   maxHP: 100
   currentHP: 100
+  intelligence: 20
+  defense: 10
+  attack1Strength: 20
+  attack2Strength: 5
+  weaknesses: []
 --- !u!1 &1099401000924809706
 GameObject:
   m_ObjectHideFlags: 0

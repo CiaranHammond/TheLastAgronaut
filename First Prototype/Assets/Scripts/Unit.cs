@@ -9,6 +9,11 @@ public class Unit : MonoBehaviour
     public int damage;
     public int maxHP;
     public int currentHP;
+    public int intelligence;
+    public int defense;
+    public int attack1Strength;
+    public int attack2Strength;
+    public string[] weaknesses;
 
     public bool TakeDamage(int damage)
     {
@@ -26,5 +31,10 @@ public class Unit : MonoBehaviour
 
         if (currentHP > maxHP)
             currentHP = maxHP;
+    }
+
+    public void lowerDefense(int amount)
+    {
+        defense -= amount;
     }
 }

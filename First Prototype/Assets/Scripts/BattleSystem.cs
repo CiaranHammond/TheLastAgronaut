@@ -53,6 +53,7 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         dialogueText.text = "What will PENELOPE do?";
+        Debug.Log("Enemy defense at start of turn: " + enemyUnit.defense);
     }
 
     public void onAttackButton()
@@ -61,6 +62,21 @@ public class BattleSystem : MonoBehaviour
             return;
         
         StartCoroutine(PlayerAttack());
+    }
+    public void onGlyphosateButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        StartCoroutine(GlyphosateAttack());
+    }
+
+    public void onTriazineButton()
+    {
+        if (state != BattleState.PLAYERTURN)
+            return;
+
+        StartCoroutine(TriazineAttack());
     }
 
     public void onHealButton()
@@ -81,6 +97,103 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.ENEMYTURN;
         StartCoroutine(EnemyTurn());
+    }
+
+    IEnumerator GlyphosateAttack()
+    {
+        bool weakToAttack = false;
+        System.Random rnd = new System.Random();
+
+        //double damage = ((playerUnit.intelligence + playerUnit.attack1Strength) / enemyUnit.defense);
+        int damage = (playerUnit.intelligence + playerUnit.attack1Strength) - (enemyUnit.defense * 2);
+        foreach (string weakness in enemyUnit.weaknesses)
+        {
+            if (weakness == "Glyphosate")
+            {
+                damage = damage * 2;
+                weakToAttack = true;
+            }
+        }
+
+        Debug.Log("Damage before random: " + damage);
+        //damage = damage * rnd.Next(1, 11);
+        Debug.Log("Damage after random: " + damage);
+
+        bool isDead = enemyUnit.TakeDamage(damage);
+
+        enemyHUD.SetHP(enemyUnit.currentHP);
+        dialogueText.text = "Penelope sprays MUTATED PLANT with toxic GLYPHOSATE!";
+
+        if (weakToAttack)
+        {
+            yield return new WaitForSeconds(2f);
+            dialogueText.text = "MUTATED PLANT is weak to GLYPHOSATE!";
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
+    }
+
+    IEnumerator TriazineAttack()
+    {
+        bool weakToAttack = false;
+        System.Random rnd = new System.Random();
+
+        //double damage = ((playerUnit.intelligence + playerUnit.attack1Strength) / enemyUnit.defense);
+        int damage = (playerUnit.intelligence + playerUnit.attack2Strength) - (enemyUnit.defense * 2);
+
+        foreach (string weakness in enemyUnit.weaknesses)
+        {
+            if (weakness == "Triazine")
+            {
+                damage = damage * 2;
+                weakToAttack = true;
+            }
+        }
+
+        Debug.Log("Damage before random: " + damage);
+        //damage = damage * rnd.Next(1, 11);
+        Debug.Log("Damage after random: " + damage);
+
+        bool isDead = enemyUnit.TakeDamage(damage);
+        enemyUnit.lowerDefense(2);
+        Debug.Log("Enemy defense after Triazine: " + enemyUnit.defense);
+
+        enemyHUD.SetHP(enemyUnit.currentHP);
+        dialogueText.text = "Penelope sprays MUTATED PLANT with toxic TRIAZINE!";
+
+        if (weakToAttack)
+        {
+            yield return new WaitForSeconds(2f);
+            dialogueText.text = "MUTATED PLANT is weak to TRIAZINE!";
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        dialogueText.text = "The TRIAZINE lowered its defense by 2!";
+
+        yield return new WaitForSeconds(2f);
+
+        if (isDead)
+        {
+            state = BattleState.WON;
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState.ENEMYTURN;
+            StartCoroutine(EnemyTurn());
+        }
     }
 
     IEnumerator PlayerAttack()
