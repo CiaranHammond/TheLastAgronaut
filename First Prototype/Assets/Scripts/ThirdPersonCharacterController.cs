@@ -6,9 +6,7 @@ public class ThirdPersonCharacterController : MonoBehaviour
 {
     public Interactable focus;
     public float Speed;
-    public Animator anim;
     Rigidbody rb;
-    
 
     Camera cam;
 
@@ -16,53 +14,12 @@ public class ThirdPersonCharacterController : MonoBehaviour
     {
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
-        {
-            anim.SetBool("isRunning", true);
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
-        }
-
-
         PlayerMovement();
-        if(Input.GetMouseButtonDown(0))
-        {
-            RemoveFocus();
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            RaycastHit[] hits;
 
-            hits = Physics.RaycastAll(ray, 10.0f);
-
-            //Debug.Log("Right Click Confirm");
-            if (hits.Length > 0)
-            {
-                for(int i = 0; i < hits.Length; i++)
-                {
-                    hit = hits[i];
-                    //Debug.Log("Interacting with " + hit.collider.name);
-                    if(hit.collider.GetComponent<Interactable>())
-                    {
-                        Interactable interactable = hit.collider.GetComponent<Interactable>();
-                        //Debug.Log("Interacting with " + hit.collider.name);
-                        if(interactable != null)
-                        {
-                            SetFocus(interactable);
-                        }
-                    }
-                }
-            }
-        }
     }
 
     void PlayerMovement()
@@ -75,15 +32,15 @@ public class ThirdPersonCharacterController : MonoBehaviour
 
     void SetFocus(Interactable newFocus)
     {
-        if(newFocus != focus)
+        if (newFocus != focus)
         {
-            if(focus != null)
+            if (focus != null)
             {
                 focus.OnDefocused();
             }
             focus = newFocus;
         }
-        
+
         newFocus.OnFocused(transform);
     }
 
@@ -94,5 +51,18 @@ public class ThirdPersonCharacterController : MonoBehaviour
             focus.OnDefocused();
         }
         focus = null;
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.tag == "Interactable")
+        {
+            Interactable interactable = coll.collider.GetComponent<Interactable>();
+            //Debug.Log("Interacting with " + hit.collider.name);
+            if (interactable != null)
+            {
+                SetFocus(interactable);
+            }
+        }
     }
 }

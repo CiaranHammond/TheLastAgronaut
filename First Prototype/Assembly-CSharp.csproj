@@ -57,6 +57,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BattleHUDScript.cs" />
      <Compile Include="Assets\Scripts\BattleSystem.cs" />
+     <Compile Include="Assets\Scripts\Crafting.cs" />
+     <Compile Include="Assets\Scripts\CraftingSlotMedicine.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
@@ -73,61 +75,61 @@
      <Compile Include="Assets\Scripts\ToBeDestroyed.cs" />
      <Compile Include="Assets\Scripts\Unit.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.multiplayer-hlapi.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.multiplayer-weaver.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.XR.LegacyInputHelpers">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.SpatialTracking">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.XR.LegacyInputHelpers">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.multiplayer-hlapi.Runtime">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -307,13 +309,13 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>E:/College/Year 4/Team Project/TheLastAgronaut/First Prototype/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Users/New User/Desktop/Unity Repositories/TheLastAgronaut/TheLastAgronaut/First Prototype/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.15f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
