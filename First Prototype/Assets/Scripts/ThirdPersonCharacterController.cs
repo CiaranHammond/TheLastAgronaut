@@ -6,7 +6,9 @@ public class ThirdPersonCharacterController : MonoBehaviour
 {
     public Interactable focus;
     public float Speed;
+    public Animator anim;
     Rigidbody rb;
+    
 
     Camera cam;
 
@@ -14,10 +16,21 @@ public class ThirdPersonCharacterController : MonoBehaviour
     {
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
+
+
         PlayerMovement();
         if(Input.GetMouseButtonDown(0))
         {
