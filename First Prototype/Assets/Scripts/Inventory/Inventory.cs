@@ -19,11 +19,13 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
     public Item itemAdded;
-    public int i = 0, j = 0, k = 0;
+    public int i = 0, j = 0, k = 0, l = 0, m = 0;
     public List<Item> items = new List<Item>();
     public Dictionary<int, Item> milkDictionary = new Dictionary<int, Item>();
     public Dictionary<int, Item> medDictionary = new Dictionary<int, Item>();
     public Dictionary<int, Item> cutDictionary = new Dictionary<int, Item>();
+    public Dictionary<int, Item> amm1Dictionary = new Dictionary<int, Item>();
+    public Dictionary<int, Item> amm2Dictionary = new Dictionary<int, Item>();
 
 
 
@@ -39,7 +41,7 @@ public class Inventory : MonoBehaviour
 
                 items.Add(item);
             }
-            if (item.name == "Medicine")
+            else if (item.name == "Medicine")
             {
                 itemAdded = item;
                 medDictionary.Add(j, item);
@@ -47,7 +49,7 @@ public class Inventory : MonoBehaviour
 
                 items.Add(item);
             }
-            if (item.name == "Cutting")
+            else if (item.name == "Cutting")
             {
                 itemAdded = item;
                 cutDictionary.Add(k, item);
@@ -55,6 +57,26 @@ public class Inventory : MonoBehaviour
 
                 items.Add(item);
             }
+            else if(item.name == "Ammo1")
+            {
+                itemAdded = item;
+                amm1Dictionary.Add(l, item);
+                l++;
+
+                items.Add(item);
+            }
+            else if (item.name == "Ammo2")
+            {
+                itemAdded = item;
+                amm2Dictionary.Add(m, item);
+                m++;
+
+                items.Add(item);
+            }
+        }
+        else
+        {
+            Debug.Log("Null Item???");
         }
 
         if (onItemChangedCallback != null)
@@ -83,6 +105,18 @@ public class Inventory : MonoBehaviour
         {
             cutDictionary.Remove(k);
             k--;
+            items.Remove(item);
+        }
+        else if (item.name == "Ammo1")
+        {
+            amm1Dictionary.Remove(l);
+            l--;
+            items.Remove(item);
+        }
+        else if (item.name == "Ammo2")
+        {
+            amm2Dictionary.Remove(m);
+            m--;
             items.Remove(item);
         }
 

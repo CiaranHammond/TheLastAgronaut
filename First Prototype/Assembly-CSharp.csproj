@@ -57,8 +57,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BattleHUDScript.cs" />
      <Compile Include="Assets\Scripts\BattleSystem.cs" />
-     <Compile Include="Assets\Scripts\Crafting.cs" />
-     <Compile Include="Assets\Scripts\CraftingSlotMedicine.cs" />
+     <Compile Include="Assets\Scripts\Crafting\Crafting.cs" />
+     <Compile Include="Assets\Scripts\Crafting\CraftingSlot.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\Interactable.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
